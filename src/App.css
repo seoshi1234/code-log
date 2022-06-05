@@ -1,0 +1,259 @@
+*{
+  margin:0;
+  
+}
+html{
+  background-color: var(--landinPage--color);
+  font-family: 'Nanum Gothic Coding', sans-serif;  
+  scroll-behavior: smooth;
+}
+:root{
+  --open--curve:cubic-bezier(0.075, 0.82, 0.165, 1);
+  --landinPage--color: #0d1117;
+  --header--color:black;
+  --color--brown : #FF9A2E;
+  --color--green : #37F051
+}
+#root{
+  overflow: scroll;
+  overflow-x: hidden;
+  
+}
+::-webkit-scrollbar{
+  width:0;
+  background: transparent;
+}
+
+.app{
+  background-color: #0d1117;
+}
+
+main{
+  /* padding:25px 0px; */  
+  background-color: #0d1117;
+  padding-top: .1px;  
+  margin-top:0px;
+  transition: none;
+  margin-top: 61.2px;  
+  height:100vh;
+}
+
+
+
+header{
+  position: fixed;
+  top:0;
+  width: 100vw;
+  background-color: var(--header--color);  
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;  
+  
+}
+
+.app__headerSpacer{
+  height: 61.2px;
+  transition: none;
+}
+
+.app__headerLogo button{
+  display: none;
+}
+
+.app__headerLogo{
+  background-color: var(--header--color);  
+  display: flex;
+  align-items: center;  
+  height: 31.2px;
+  padding: 15px;
+  z-index: 10;
+}
+
+.app__headerLogoIcon{
+  cursor: pointer;
+}
+
+.app__headerLogoText{
+  cursor: pointer;
+  color:#fafafa;
+  font-family: 'Red Hat Mono', monospace;
+  font-size:25px;
+  display: inline-block;
+  margin-left: 7px; 
+}
+
+.app__headerMenu, .app__headerAuth{  
+  background-color: var(--header--color);  
+  margin:0px 10px;
+  display: flex;  
+}
+
+.app__headerMenu button, .app__headerAuth button{
+  color:white;
+  margin: 10px 5px;
+  font-family: 'Nanum Gothic Coding', sans-serif;  
+  font-size:15px;
+}
+
+.posts__container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+}
+.app__navigationBtn0{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  background-color:#fafafa;  
+}
+.app__navigationBtn0Container{
+  width:50px;
+  height:50px;
+  border-radius: 50%;
+  background-color:#fafafa;
+  box-shadow: 0px 0px 10px 0px #000000;
+  position: fixed;
+  bottom:30px;
+  right:30px;
+}
+
+
+
+
+
+.landingPage{
+  overflow: hidden;
+  font-family: "Nanum Gothic Coding", sans-serif;
+  height:100%;  
+  color:white;
+  margin-top: 0px;
+  transition: none;
+  z-index: 3;
+  background-image: url('../public/transparent.png');
+}
+.landingPage h4{  
+  padding-top: 120px;
+  padding-left:30px;  
+}
+.landingPage h2{
+  padding: 60px 30px;
+  padding-top:60px;
+}
+.landingPage button{
+  margin-bottom: 30px;
+  margin-left:30px;
+  z-index: 2;
+}
+.landingPageImage{
+  width:140vh;
+  height: 100vh;
+  background-image: url('../public/landingPage-rightSide.png');
+  background-size: cover;
+  right:0;
+  top:0px;
+  z-index: 0;
+  position:absolute;  
+}
+
+@media screen and (max-width:900px){
+  header{    
+    flex-direction: column;
+  }
+  .app__headerSpacer{
+    height:61.2px;
+    transition: height .3s var(--open--curve) 0s;
+  }
+  .app__headerSpacer.active{
+    height:320.2px;
+  }
+  .app__headerMenu,.app__headerAuth{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding-bottom: 20px;    
+    position: absolute;
+    width: 100%;    
+    height: auto;
+    transition: top .3s var(--open--curve) 0s;
+    z-index: 5;
+  }
+  .app__headerMenu{
+    top:-141.3px;
+  }
+  .app__headerAuth{
+    top:-31.8px;
+  }
+  .app__headerMenu button, .app__headerAuth button{
+    margin:0;    
+    width:100%;
+    height:36.5px;
+  }
+  .app__headerLogo button{
+    display: inline-block;
+    position: absolute;
+    right:5px;
+  }
+  .app__headerMenu.active{
+    top:61.2px;
+  }
+  .app__headerAuth.active{
+    top:227.2px;
+  }
+  .landingPage{    
+    text-align: center;
+    height:auto;    
+  }  
+  .landingPage h4{
+    padding-top: 30px;
+    padding-left:0;
+  }
+  .landingPage h2{
+    padding: 60px 0;
+    padding-top:30px;
+  }
+  .landingPage button{
+    margin-bottom: 30px;
+    margin-left:0;
+  }
+  .landingPageImage{
+    position: inherit;
+    width:100vw;
+    height: 70vw;
+    background-image: url('../public/landingPage.png');
+    background-size: cover;
+  }
+  main{
+    transition: margin-top .3s var(--open--curve) 0s;    
+  }
+  main.menuOpened{
+    margin-top: 356.7px;
+  }
+}
+
+.app__signUp {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.app__signUp p{
+  font-style: "Red Hat Mono", monospace;
+  font-size: 24px;
+}
+
+.app__signUp input{
+  margin: 10px auto;
+  border: 0px;
+  font-size: medium;
+  padding: 10px;
+}
+
+.app__signUp input:focus{
+  outline: 0;
+  background-color: #fafafa;
+  
+}
+
+.app__signUp :last-child{
+  margin: 5px auto;
+}

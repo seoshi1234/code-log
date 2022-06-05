@@ -1,0 +1,44 @@
+.postUpload__container{
+  margin-bottom: 20px;
+  display: flex;
+  width:100vw;
+  flex-direction: column;
+}
+
+.postUpload__container button{
+  height:28px !important;
+}
+
+.postUpload__button{
+  margin:10px;
+}
+
+.w-md-editor-toolbar svg{
+  width:20px;
+  height:20px;
+}
+
+.w-md-editor-toolbar{
+  border: 2px solid #dfdfdf;
+}
+.w-md-editor{
+  height:auto !important;
+}
+
+.w-md-editor-input{
+  border: 2px solid #dfdfdf;
+  border-left:0px;
+  border-top:0px;  
+}
+.w-md-editor-preview{
+  border: 2px solid #dfdfdf;
+  border-right:0px;
+  border-top:0px;
+}
+.w-md-editor-toolbar{
+  height:auto !important;    
+}
+
+
+@media screen and (max-width:544px){
+}

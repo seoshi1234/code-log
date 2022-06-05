@@ -1,0 +1,124 @@
+.postDetail__languageInfo{
+  margin:0 20px;  
+  margin-top:0px;  
+  display: flex;
+}
+.postDetail__languageInfo p{
+  padding:6px;
+}
+.postDetail__languageBlock{
+  background-color: #1976d2;
+  padding: 2px;
+  margin:5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.postDetail__link{
+  margin:0 20px;  
+  color:#dfdfdf;  
+}
+.postDetail__content{
+  padding:10vw;
+  padding-top:10px;
+}
+.postDetail{
+  color:#dfdfdf;
+  
+}
+.postDetail__topInfo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.postDetail__topInfo__rightSection{
+  display: flex;
+}
+.postDetail__topInfo__rightSection>*{
+  margin-right: 20px;
+}
+.postDetail__commentForm{
+  display: flex;
+  margin-top: 20px;
+}
+.postDetail__commentForm__leftSection{
+  width:40px;
+  height:40px;
+  margin:5px;
+  border:1px solid black;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.postDetail__commentForm__rightSection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.postDetail__commentForm textarea{
+  width:340px;
+  min-height:1em;
+  font-size: medium;
+  resize: none;
+  border:2px solid black;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-family: 'Nanum Gothic Coding', sans-serif;  
+}
+.postDetail__commentForm textarea:focus{
+  outline:0;
+}
+
+.postDetail__commentsContainer{
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: scroll;
+  
+}
+.postDetail__noComment{  
+  margin: 20px auto;  
+}
+.postDetail__eachComment{
+  width:100%;
+  margin: 10px 0;
+}
+.postDetail__eachCommentContent{
+  display: flex;
+  
+}
+.postDetail__commentProfile{
+  width:40px;
+  height:40px;
+  margin:5px;
+  border:1px solid black;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.postDetail__eachComment:hover .postDetail__editComment{
+  height:30px;
+}
+.postDetail__eachComment:hover .postDetail__editComment svg{
+  display: inherit;
+}
+.postDetail__editComment{  
+  cursor: pointer;
+  display: flex;
+  right: 30px;
+  height: 0px;
+  width:100%;  
+  justify-content: center;
+  align-content:center;
+  background-color: rgb(255, 54, 54);
+  transition: height .2s var(--open--curve) 0s;
+}
+.postDetail__editComment svg{  
+  display: none;
+}
+.postDetail__commentInfo-upper{
+  display: flex;
+  font-size: small;
+}
+
