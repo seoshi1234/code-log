@@ -9,15 +9,10 @@ import { useSelector } from 'react-redux';
 
 
 function PostThumbnail(props) {
-  const [uploader, setUploader] = useState({});    
+    
   const user = useSelector(state=>state.user.value);
   const navigate = useNavigate();  
 
-  useEffect(()=>{    
-    db.collection('users').doc(props.post.uid).get().then((doc)=>{
-      setUploader(doc.data());
-    })
-  },[]);
 
   return (
     <div className={`postThumbnail ${user?.uid==props.post.uid?'isOwner':''}`}
@@ -37,9 +32,9 @@ function PostThumbnail(props) {
           </IconButton>
         </div>
         <div className="postThumbnail__profile">
-          <div className="postThumbnail__profileImage" style={{backgroundImage:`url(${uploader&&uploader.profileImageUrl})`}}/>
+          <div className="postThumbnail__profileImage" style={{backgroundImage:`url(${props.post.profileImageUrl})`}}/>
           <p className="postThumbnail__username">
-            {uploader&&uploader.username}
+            {props.post.author}
           </p>
         </div>
       </div>  

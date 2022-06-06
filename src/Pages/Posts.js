@@ -25,6 +25,7 @@ function Posts(props) {
   },[posts])
 
   useEffect(()=>{
+    setRenderedPosts([]);
     setRenderedPosts([...filteredPosts])
     console.log(renderedPosts);
   },[filteredPosts])

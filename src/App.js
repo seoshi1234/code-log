@@ -125,9 +125,9 @@ function App() {
   },[user,username]);
 
   const setEachAuthorData =  async (post)=>{
-    let author = await (await db.collection('users').doc(post.data().uid).get()).data().username
+    let user = await (await db.collection('users').doc(post.data().uid).get()).data();
 
-    return Object.assign(post.data(),{author:author,id:post.id});
+    return Object.assign(post.data(),{author:user.username,profileImageUrl:user.profileImageUrl,id:post.id});
   }
 
   const processPosts = async (snapshot)=>{
