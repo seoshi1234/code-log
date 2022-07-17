@@ -164,7 +164,7 @@ header{
     transition: height .3s var(--open--curve) 0s;
   }
   .app__headerSpacer.active{
-    height:320.2px;
+    height:283.7px;
   }
   .app__headerMenu,.app__headerAuth{
     display: flex;
@@ -197,7 +197,7 @@ header{
     top:61.2px;
   }
   .app__headerAuth.active{
-    top:227.2px;
+    top:190.7px;
   }
   .landingPage{    
     text-align: center;

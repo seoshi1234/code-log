@@ -31,20 +31,7 @@ function Posts(props) {
   },[filteredPosts])
 
   return (
-    <div>
-      <Button onClick={()=>{
-        db.collection('posts').get().then((snapshot)=>{        
-          db.collection('posts').add(snapshot.docs.at(0).data());
-        })
-      }} variant="contained">게시물 추가</Button>
-      <Button onClick={()=>{
-        db.collection('posts').get().then((snapshot)=>{
-          snapshot.docs.forEach((doc,i)=>{
-            if(i >= snapshot.docs.length-3)
-              doc.ref.delete();
-          });
-        })
-      }} variant="contained">게시물 삭제</Button>
+    <div>      
       <div className="posts__container">
         {
           renderedPosts.map((post,i)=>{

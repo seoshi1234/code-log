@@ -28,9 +28,9 @@ function PostSearch(props) {
     <div className={`postSearch__container ${
       props.searchOpened?'':'disabled'
     }`}
-    onKeyDown={(e)=>{
+    onKeyUp={(e)=>{
+      onSearch();
       if(e.key==="Enter"){
-        onSearch();
       }
     }}
     >

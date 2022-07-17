@@ -1,0 +1,25 @@
+.reference{
+  color:#dfdfdf;
+  cursor:pointer;
+  padding:20px;
+  overflow: hidden;
+  width:70vw;
+  border-radius: 10px;
+  background-color: #222222;
+  max-height: 200px;
+  margin: 20px;
+}
+.reference__title{
+  font-size: xx-large;
+  margin-bottom: 20px;
+}
+.reference__description{  
+  
+}
+.reference__thumbnail{
+  width:280px;
+  height:140px;  
+  float:right;
+  background-position: center;
+  background-size: cover;
+}

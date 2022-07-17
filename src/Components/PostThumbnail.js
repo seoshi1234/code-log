@@ -28,7 +28,7 @@ function PostThumbnail(props) {
         
         <div className={`postThumbnail__editBtnContainer`} >
           <IconButton className='postThumbnail__editBtn' onClick={(e)=>{e.stopPropagation(); navigate(`/editPost/${props.post.id}`)}}>
-            <EditIcon sx={{fontSize:'81%', color:'#0d1117'}}/>
+            <EditIcon sx={{fontSize:'81%', color:'#dfdfdf'}}/>
           </IconButton>
         </div>
         <div className="postThumbnail__profile">

@@ -1,0 +1,41 @@
+.addReference{
+  width: 40vw;
+  height:35vh;
+  background-color: #eeeeee;
+  border-radius: 1vw;
+  position:fixed;  
+  right:110px;
+  bottom: 30px;
+  padding:20px;
+  transition: bottom .25s 0s ease-out;  
+}
+.addReference.disabled{
+  bottom: -45vh;  
+}
+
+.addReference__title{
+  font-size: x-large;
+  margin-bottom: 4px;
+}
+
+hr{
+  border-top: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.addReference__input{
+  border-radius: 1vw;
+  width: 30vw;
+  height:3vh;
+  margin: 4px;
+  margin-right: 0;
+  padding: .5vw;
+  border: 0px;
+  background-color: #dfdfdf;
+  font-size: medium ;
+  accent-color: var(--landinPage--color);
+}
+
+.addReference__input:focus{
+  outline: 0;
+}

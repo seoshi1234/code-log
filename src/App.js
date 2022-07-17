@@ -15,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import Modal from '@mui/material/Modal';
 import PostDetail from './Pages/PostDetail.js';
+import References from './Pages/References.js';
 
 
 const PostUpload = lazy(()=>import('./Pages/PostUpload.js'));
@@ -43,6 +44,7 @@ function App() {
   const store = useStore();
   //#endregion
   //#region states
+  const [references,setReferences] = useState([])
   const posts = useSelector((state)=>state.posts.value); 
   const postSearchOption = useSelector((state)=>state.postSearchOption.value)   
   const [signUpOpened, setSignUpOpened] = useState(false);
@@ -142,10 +144,12 @@ function App() {
   useEffect(()=>{    
     db.collection('posts').onSnapshot(snapshot=>{
       //snapshot: 새로운 게시물이 올라올 때마다, 수정될 때마다 실행됨      
-      processPosts(snapshot)          
-      
+      processPosts(snapshot)                
     })
     getLanguageTableAndSet(setLanguageTable);
+    db.collection('references').onSnapshot(snapshot=>{      
+      setReferences(snapshot.docs);      
+    })
   },[]);
 
 
@@ -179,9 +183,8 @@ function App() {
             </IconButton>
           </div>
           <div className={`app__headerMenu ${menuOpened?'active':''}`}>
-            <Button variant="text" onClick={()=>navigate('/posts')}>게시판</Button>
-            <Button variant="text" onClick={()=>navigate('/jobs')}>채용정보</Button>
-            <Button variant="text" onClick={()=>navigate('/courses')}>웹사이트</Button>            
+            <Button variant="text" onClick={()=>navigate('/posts')}>게시판</Button>            
+            <Button variant="text" onClick={()=>navigate('/references')}>레퍼런스</Button>            
             <Button variant="text" onClick={()=>navigate('/mypage')}>마이페이지</Button>
       
           </div>
@@ -191,9 +194,8 @@ function App() {
           </div>
       
         </header>
-        <div className={`app__headerSpacer ${menuOpened?'active':''}`}>
+        <div className={`app__headerSpacer ${menuOpened?'active':''}`}/>
 
-        </div>
         <Modal
           open={signUpOpened}
           onClose={closeSignUp}
@@ -256,6 +258,9 @@ function App() {
         </Modal>
         <AlertModal/>
         <Routes>
+          <Route path='/references' element={
+            <References references={references}/>
+          }/>
           <Route path='/upload' element={
             <PostUpload languageTable={languageTable}/>
           }/>
